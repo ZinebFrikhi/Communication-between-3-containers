@@ -1,0 +1,48 @@
+<html>
+   <head>
+      <title>Creating MySQL Table</title>
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+
+   
+</head>
+   <body>
+      <form>
+        <p>
+            <label>Name:</label>
+            <input type="text" name="name" id="name">
+        </p>
+        <p>
+            <label>Prenom:</label>
+            <input type="text" name="prenom" id="prenom"> 
+        </p>
+        <p>
+            <label>Age:</label>
+            <input type="text" name="age"  id="age">
+        </p>
+        <p>
+            <label>niveau:</label>
+            <input type="text" name="niveau" id="niveau">
+        </p>
+   <input type="submit" onclic
+k="register()" value="Submit"> </form>
+   </body>
+   <script>
+
+  function register() {
+   $.ajax({
+  type: "POST",
+  url: "http://172.22.0.4/php_api_rest/controllers/create.php",
+ data: JSON.stringify({ "nom": "sqlnoof",
+            "prenom": "hshhdhd",
+            "age": 11,
+            "niveau_id":1 }),
+  contentType: "application/json",
+  success: function (result) {
+    console.log(result);
+  },
+  error: function (result, status) {
+    console.log(result);
+  }
+});}
+     </script>
+</html>

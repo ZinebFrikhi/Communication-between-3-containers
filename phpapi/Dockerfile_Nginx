@@ -1,0 +1,6 @@
+FROM nginx:alpine
+#copy configuration of our app in the configuration in nginx
+COPY ./config/nginx/app.conf /etc/nginx/conf.d/app.conf
+#copy all in workdir
+COPY . /var/www
+
